@@ -1,0 +1,11 @@
+{
+  "name": "drafty2000",
+  "version": "0.0.1",
+  "main": "index.html",
+  "no-edit-menu": true,
+  "window": {
+    "frame": true,
+    "toolbar": false,
+    "show": true
+  }
+}
