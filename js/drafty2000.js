@@ -27,7 +27,7 @@ var drafty2000 = (function () {
 
       fileSubMenu.append(
         new gui.MenuItem({
-          label: 'Open Cmmd S',
+          label: 'Open Cmmd O',
           click: function(){
             openFile();
             }
@@ -48,6 +48,9 @@ var drafty2000 = (function () {
 
     var input = document.getElementById('textInput');
     input.innerHTML = 'Just Type';
+
+    // Listen for keyboard shortcuts
+    document.onkeydown = keyBoardShortcuts;
 
   };
 
@@ -133,6 +136,27 @@ var drafty2000 = (function () {
       text = text.slice(0, -3);
     }
     return text;
+  }
+
+
+  function keyBoardShortcuts (e) {
+
+    var keyCode = e.which;
+
+    if (e.metaKey) {
+
+
+      // CMD + O
+      if (keyCode === 79) {
+        openFile();
+      }
+
+      // CMD + P
+      if (keyCode == 80) {
+        window.print();
+      }
+
+    }
   }
 
   // Expose Public Methods
