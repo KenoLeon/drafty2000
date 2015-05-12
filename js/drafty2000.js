@@ -5,6 +5,7 @@ var drafty2000 = (function () {
   var menu = new gui.Menu({ type: 'menubar' });
   var filePath;
   var currentWindow;
+  var input;
 
   var init = function(){
 
@@ -42,15 +43,15 @@ var drafty2000 = (function () {
       })
     );
 
-  currentWindow.menu = menu;
-
+    currentWindow.menu = menu;
+    input = document.getElementById('textInput');
     // Extra Menus
 
-    var input = document.getElementById('textInput');
-    input.innerHTML = 'Just Type';
 
-    // Listen for keyboard shortcuts
+    input.innerHTML = 'Just Type';
+      // Listen for keyboard shortcuts
     document.onkeydown = keyBoardShortcuts;
+    placeCaretAtEnd(input);
 
   };
 
@@ -67,8 +68,9 @@ var drafty2000 = (function () {
         if (!text) {return openFile();}
 
         var html = textToHTML(text);
-        var input = document.getElementById('textInput');
+        //var input = document.getElementById('textInput');
         input.innerHTML = html;
+        placeCaretAtEnd(input);
 
       });
 
@@ -158,6 +160,24 @@ var drafty2000 = (function () {
 
     }
   }
+
+  function placeCaretAtEnd(el) {
+    el.focus();
+    if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined") {
+        var range = document.createRange();
+        range.selectNodeContents(el);
+        range.collapse(false);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+    } else if (typeof document.body.createTextRange != "undefined") {
+        var textRange = document.body.createTextRange();
+        textRange.moveToElementText(el);
+        textRange.collapse(false);
+        textRange.select();
+    }
+}
+
 
   // Expose Public Methods
   return{

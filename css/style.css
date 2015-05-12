@@ -60,7 +60,7 @@ body {
 }
 
 /* Custom caret */
-#textInput p:last-child:after {
+/*#textInput p:last-child:after {
   content: "\2007";
   background: #ffc820;
   width: 0.25em;
@@ -68,7 +68,7 @@ body {
   left: -1px;
   display: inline-block;
   -webkit-animation: blink 0.5s ease-in-out 0.25s infinite alternate;
-}
+}*/
 
 /* Fringe to make scrolling less hidden */
 #textInput:after {
@@ -87,19 +87,19 @@ body {
 }
 
 /* Caret animation */
-@-webkit-keyframes blink {
+/*@-webkit-keyframes blink {
   0% {opacity:1}
-  100% {opacity:0}
+  100% {opacity:0}*/
 }
 
 /* Custom styling 'deleted' text */
 .strike::after {
-  content: "";
+  /*content: "";
   border-bottom: 0.15em solid #000;
   position: absolute;
   top: 50%;
   left: 0;
-  right: 0;
+  right: 0;*/
 }
 
 /* Hide file pickers used to acces fs */
