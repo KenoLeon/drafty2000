@@ -12,14 +12,9 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, b, ul, ol, li, section {
   box-sizing: border-box;
 }
 
-/*::selection {background: rgba(255,0,0,0.15)}
-::-moz-selection {background: rgba(255,0,0,0.15)}*/
 
 ::selection {background: #ededed;}
 ::-moz-selection {background: #ededed;}
-
-
-
 
 body {
   font: 400 1em / 1.5em 'CourierPrime', monospace;
@@ -59,16 +54,6 @@ body {
   outline: none;
 }
 
-/* Custom caret */
-/*#textInput p:last-child:after {
-  content: "\2007";
-  background: #ffc820;
-  width: 0.25em;
-  position: relative;
-  left: -1px;
-  display: inline-block;
-  -webkit-animation: blink 0.5s ease-in-out 0.25s infinite alternate;
-}*/
 
 /* Fringe to make scrolling less hidden */
 #textInput:after {
@@ -86,21 +71,6 @@ body {
   display: none;
 }
 
-/* Caret animation */
-/*@-webkit-keyframes blink {
-  0% {opacity:1}
-  100% {opacity:0}*/
-}
-
-/* Custom styling 'deleted' text */
-.strike::after {
-  /*content: "";
-  border-bottom: 0.15em solid #000;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;*/
-}
 
 /* Hide file pickers used to acces fs */
 input[type="file"] {display: none;}
