@@ -34,6 +34,14 @@ var drafty2000 = (function () {
             }
         }));
 
+        fileSubMenu.append(
+          new gui.MenuItem({
+            label: 'Save Cmmd S',
+            click: function(){
+              saveFile();
+              }
+          }));
+
 
     // Append MenuItem as a Submenu
     menu.append(
@@ -54,6 +62,18 @@ var drafty2000 = (function () {
     placeCaretAtEnd(input);
 
   };
+
+  function saveFile(){
+    // If we have a filePath, write the data there
+    if (filePath) {
+      alert('will Save art'+ filePath);
+      }
+    // Otherwise ask the user to pick a location to save the file
+    openFilePicker('saveFile', function(value){
+      setFilePath(value);
+      alert('Will Save at' + filePath);
+    });
+  }
 
   function openFile(){
     openFilePicker('readFile',function(value){
@@ -157,6 +177,12 @@ var drafty2000 = (function () {
       if (keyCode == 80) {
         window.print();
       }
+
+      // CMD + S
+      if (keyCode === 83) {
+        saveFile();
+      }
+
 
     }
   }
