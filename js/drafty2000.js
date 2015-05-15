@@ -81,8 +81,20 @@ var drafty2000 = (function () {
 function writeFile(){
 
   var text = htmlToText(getHTMLof('textInput'));
-  alert(text);
-
+  fs.writeFile(filePath, text, function(err){
+    if (err) {
+      setFilePath(false);
+      if (err.code === 'ENOENT') {
+        alert('Please select a valid location to save this document.');
+        }
+        if (err.code === 'EACCES') {
+          alert('You don\'t have permission to save this document there.');
+          }
+      } else {
+        // Update the window title
+        currentWindow.title = fileNameFrom(filePath);
+      }
+    });
 }
 
   function openFile(){
