@@ -66,14 +66,24 @@ var drafty2000 = (function () {
   function saveFile(){
     // If we have a filePath, write the data there
     if (filePath) {
-      alert('will Save art'+ filePath);
+      writeFile();
+      //alert('will Save art'+ filePath);
       }
     // Otherwise ask the user to pick a location to save the file
     openFilePicker('saveFile', function(value){
       setFilePath(value);
-      alert('Will Save at' + filePath);
+      writeFile();
+      //alert('Will Save at' + filePath);
     });
   }
+
+
+function writeFile(){
+
+  var text = htmlToText(getHTMLof('textInput'));
+  alert(text);
+
+}
 
   function openFile(){
     openFilePicker('readFile',function(value){
@@ -161,6 +171,17 @@ var drafty2000 = (function () {
   }
 
 
+  function htmlToText(html){
+    html = html.replace(/<p>/gi, "");
+    html = html.replace(/<\/p>/gi, "\n");
+    html = html.replace(/&nbsp;/gi, " ");
+    html = html.replace(/&#xfeff;/gi, " ");
+    html = html.replace(/<span>/gi, "");
+    html = html.replace(/<\/span>/gi, "");
+    return html;
+  }
+
+
   function keyBoardShortcuts (e) {
 
     var keyCode = e.which;
@@ -204,6 +225,10 @@ var drafty2000 = (function () {
     }
 }
 
+  function getHTMLof (id) {
+    var node = document.getElementById(id);
+    return node.innerHTML;
+  }
 
   // Expose Public Methods
   return{
