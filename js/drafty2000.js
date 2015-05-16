@@ -20,7 +20,7 @@ var drafty2000 = (function () {
     var fileSubMenu = new gui.Menu();
     fileSubMenu.append(
       new gui.MenuItem({
-        label: 'Print Cmmd P',
+        label: 'Print                      ⌘P',
         click: function(){
           window.print();
           }
@@ -28,7 +28,7 @@ var drafty2000 = (function () {
 
       fileSubMenu.append(
         new gui.MenuItem({
-          label: 'Open Cmmd O',
+          label: 'Open...           ⌘O',
           click: function(){
             openFile();
             }
@@ -36,7 +36,7 @@ var drafty2000 = (function () {
 
         fileSubMenu.append(
           new gui.MenuItem({
-            label: 'Save Cmmd S',
+            label: 'Save                      ⌘S',
             click: function(){
               saveFile();
               }
