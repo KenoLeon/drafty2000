@@ -32,18 +32,51 @@ body {
   body {font-size: 1.1em}
 }
 
-/* Holds the text the user types */
-#input {
-  position:fixed; /* Position fixed stops weird scrolling to top */
-  top: 0;
-  left: -200px;
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
+/*UI Elements on Top*/
+#topUI{
+  top: 30px;
+  position: fixed;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
 }
+
+#topUI a:link{
+  text-decoration: none;
+  color: #686868;
+}
+
+#topUI a:visited{
+  text-decoration: none;
+  color: #686868;
+}
+
+#topUI a:hover{
+  text-decoration: none;
+  color: #686868;
+}
+
+#topUI a:active{
+  text-decoration: none;
+  color: #686868;
+}
+
+
+#topUILeft{
+  float: left;
+  margin-left: 10px;
+}
+
+
+#topUIRight{
+  float: right;
+  margin-right: 20px;
+  }
+
 
 /* Renders the text the user has typed */
 #textInput {
+  top: 30px;
   margin: 0 auto;
   padding: 2em 3em;
   max-width: 50em;
