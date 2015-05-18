@@ -242,6 +242,17 @@ function writeFile(){
     return node.innerHTML;
   }
 
+
+  // UI
+  //document.getElementById('topUILeft')
+  $( "#topUILeft" ).on( "click", function() {
+  alert( 'Will show toolbox' );
+  });
+
+  $( "#topUIRight" ).on( "click", function() {
+  alert( 'Will show Help' );
+  });
+
   // Expose Public Methods
   return{
     init:init

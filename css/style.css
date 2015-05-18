@@ -41,42 +41,25 @@ body {
   width: 100%;
 }
 
-#topUI a:link{
-  text-decoration: none;
-  color: #686868;
-}
-
-#topUI a:visited{
-  text-decoration: none;
-  color: #686868;
-}
-
-#topUI a:hover{
-  text-decoration: none;
-  color: #686868;
-}
-
-#topUI a:active{
-  text-decoration: none;
-  color: #686868;
-}
-
-
 #topUILeft{
+  color: #686868;
   float: left;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 
 #topUIRight{
+  color: #686868;
   float: right;
   margin-right: 20px;
+  cursor: pointer;
   }
 
 
 /* Renders the text the user has typed */
 #textInput {
-  top: 30px;
+  top: 50px;
   margin: 0 auto;
   padding: 2em 3em;
   max-width: 50em;
