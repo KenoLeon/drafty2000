@@ -41,7 +41,7 @@ body {
   width: 100%;
 }
 
-#topUILeft{
+#topUIToolBox{
   color: #686868;
   float: left;
   margin-left: 10px;
@@ -49,11 +49,16 @@ body {
 }
 
 
-#topUIRight{
+#topUIHelp{
   color: #686868;
   float: right;
   margin-right: 20px;
   cursor: pointer;
+  }
+
+  #toolBox{
+    margin-top: 20px;
+    display: none;   
   }
 
 

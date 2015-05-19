@@ -242,16 +242,22 @@ function writeFile(){
     return node.innerHTML;
   }
 
-
   // UI
-  //document.getElementById('topUILeft')
-  $( "#topUILeft" ).on( "click", function() {
-  alert( 'Will show toolbox' );
+
+
+  $(document).ready(function() {
+    $('#topUIToolBox').click(function(e) {
+      $("#toolBox").toggle();
+    });
+
+    $('#topUIHelp').click(function(e) {
+      alert('Will Call Help');
+    });
+
   });
 
-  $( "#topUIRight" ).on( "click", function() {
-  alert( 'Will show Help' );
-  });
+
+
 
   // Expose Public Methods
   return{
@@ -260,3 +266,7 @@ function writeFile(){
 
 
 }());
+
+
+// UI
+//document.getElementById('topUILeft')
