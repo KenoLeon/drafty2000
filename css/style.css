@@ -1,9 +1,9 @@
 /* Reset */
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, b, ul, ol, li, section {
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, b, section {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 100% !important;
   font: inherit;
   vertical-align: baseline;
   position: relative;
@@ -17,9 +17,9 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, b, ul, ol, li, section {
 ::-moz-selection {background: #ededed;}
 
 body {
-  font: 400 1em / 1.5em 'CourierPrime', monospace;
-  color: #212121;
-  text-rendering: optimizeLegibility;
+  font: 400 1em / 1.5em 'CourierPrime', monospace !important;
+  color: #212121 !important;
+  text-rendering: optimizeLegibility !important;
 }
 
 
@@ -58,7 +58,11 @@ body {
 
   #toolBox{
     margin-top: 20px;
-    display: none;   
+    display: none;
+  }
+
+  #toolBox li{
+    cursor: pointer;    
   }
 
 
@@ -94,4 +98,6 @@ body {
 
 
 /* Hide file pickers used to acces fs */
-input[type="file"] {display: none;}
+input[type="file"] {
+  display: none !important;
+  }
