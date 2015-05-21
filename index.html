@@ -5,14 +5,45 @@
     <title>Drafty 2000</title>
     <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="./js/drafty2000.js"></script>
-    <script type="text/javascript">
-    </script>
+    <script src="./js/bootstrap.min.js"></script>
     <style type="text/css">@font-face {font-family: 'CourierPrime';src: url('fonts/Courier Prime.ttf');}</style>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
   </head>
   <body>
-    <div id="topUI">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div id="topUIToolBox">
+          ToolBox
+        </div>
+        <div id="topUIHelp">
+          Help
+        </div>
+      </div>
+    </nav>
+    <div data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+
+      <ul id="toolBox">        
+        <li id="tPage">Title Page</li>
+        <li id="tSlug">Slugline</li>
+        <li id="tAction">Action</li>
+        <li id="tCharacter">Character</li>
+        <li id="tDialog">Dialog</li>
+      </ul>
+
+
+
+    </div>
+
+
+
+    <section id="textInput" contenteditable="true" spellcheck="true"></section>
+
+
+
+
+    <!-- <div id="topUI">
       <div id="topUIToolBox">
         ToolBox
       </div>
@@ -28,7 +59,11 @@
       </ul>
     </div>
 
-    <section id="textInput" contenteditable="true" spellcheck="true"></section>
+    <section id="textInput" contenteditable="true" spellcheck="true"></section> -->
+
+
+
+
     <input type="file" id="saveFile" nwsaveas="~/Untitled" accept=".txt" />
     <input type="file" id="readFile" accept=".txt"/>
     <script type="text/javascript">drafty2000.init();</script>

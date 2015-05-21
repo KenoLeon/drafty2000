@@ -62,13 +62,13 @@ body {
   }
 
   #toolBox li{
-    cursor: pointer;    
+    cursor: pointer;
   }
 
 
 /* Renders the text the user has typed */
 #textInput {
-  top: 50px;
+  top: 40px;
   margin: 0 auto;
   padding: 2em 3em;
   max-width: 50em;
