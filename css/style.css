@@ -14,16 +14,15 @@ body {
   text-rendering: optimizeLegibility !important;
 }
 
-#spacerTop{
-  height: 40px;
+.navbar-default{
+  background-color: #ffffff !important;
+  border-color: #c7c7c7 !important;
 }
 
-@media (max-width: 767px) {
-  .bs-docs-sidenav.affix {
-    position: static;
-    width: auto;
-    top: 0;
-  }
+
+
+#spacerTop{
+  height: 60px;
 }
 
 /*UI Elements on Top*/
