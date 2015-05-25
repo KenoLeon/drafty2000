@@ -247,38 +247,11 @@ function writeFile(){
 
   $(document).ready(function() {
     // Main UI
-    $('#topUIToolBox').click(function(e) {
-      $("#toolBox").toggle();
-    });
-
-    $('#topUIHelp').click(function(e) {
-      alert('Will Call Help');
-    });
-    // toolBox
-    $('#tPage').click(function(e) {
-      alert('Title Page');
-    });
-
-    $('#tSlug').click(function(e) {
-      alert('Slugline');
-    });
-
-    $('#tAction').click(function(e) {
-      alert('Action');
-    });
-
-    $('#tCharacter').click(function(e) {
-      alert('Character');
-    });
-
-    $('#tDialog').click(function(e) {
-      alert('Dialog');
+    $('#titlePage').click(function(e) {
+      $( "#textInput" ).prepend( "<p>FADE IN:</p>" );
     });
 
   });
-
-
-
 
   // Expose Public Methods
   return{
