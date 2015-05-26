@@ -5,7 +5,7 @@ var drafty2000 = (function () {
   var menu = new gui.Menu({ type: 'menubar' });
   var filePath;
   var currentWindow;
-  var input;
+  var textInput;
 
   var init = function(){
 
@@ -52,14 +52,15 @@ var drafty2000 = (function () {
     );
 
     currentWindow.menu = menu;
-    input = document.getElementById('textInput');
+    textInput = document.getElementById('textInput');
+    //textInput.onkeydown = inputKeyDown;
     // Extra Menus
 
 
-    input.innerHTML = 'Just Type';
+    textInput.innerHTML = 'Just Type';
       // Listen for keyboard shortcuts
     document.onkeydown = keyBoardShortcuts;
-    placeCaretAtEnd(input);
+    placeCaretAtEnd(textInput);
 
   };
 
@@ -111,8 +112,8 @@ function writeFile(){
 
         var html = textToHTML(text);
         //var input = document.getElementById('textInput');
-        input.innerHTML = html;
-        placeCaretAtEnd(input);
+        textInput.innerHTML = html;
+        placeCaretAtEnd(textInput);
 
       });
 
@@ -217,8 +218,33 @@ function writeFile(){
       }
 
 
+      if (keyCode === 0) {
+        alert('Tab');
+      }
+
     }
   }
+
+  function inputKeyDown (e) {
+
+     var keyCode = e.which;
+     // Tab key
+
+     if(keyCode === 9) {
+        // We want the tab key to behave like one in a text editor.
+        //textInput.innerHTML += '&nbsp;&nbsp;';
+        e.preventDefault();
+        return;
+        //alert('Tab');
+     }
+
+
+
+}
+
+
+
+
 
   function placeCaretAtEnd(el) {
     el.focus();
@@ -248,7 +274,13 @@ function writeFile(){
   $(document).ready(function() {
     // Main UI
     $('#titlePage').click(function(e) {
-      $( "#textInput" ).prepend( "<p>FADE IN:</p>" );
+      $.get( "./Templates/titlePage.html", function( data ) {
+        //alert(data);
+        $( "#textInput" ).prepend( data );
+        // $( ".result" ).html( data );
+        // alert( "Load was performed." );
+      });
+
     });
 
   });
