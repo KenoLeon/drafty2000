@@ -1,5 +1,9 @@
 var drafty2000 = (function () {
 
+  $.getScript('js/caretUtils.js', function() {
+  });
+
+
   var gui = require('nw.gui');
   var fs = require('fs');
   var menu = new gui.Menu({ type: 'menubar' });
@@ -53,7 +57,7 @@ var drafty2000 = (function () {
 
     currentWindow.menu = menu;
     textInput = document.getElementById('textInput');
-    //textInput.onkeydown = inputKeyDown;
+    textInput.onkeydown = inputKeyDown;
     // Extra Menus
 
 
@@ -234,8 +238,10 @@ function writeFile(){
         // We want the tab key to behave like one in a text editor.
         //textInput.innerHTML += '&nbsp;&nbsp;';
         e.preventDefault();
-        return;
-        //alert('Tab');
+        //return;
+        $( "#textInput" ).prepend("&nbsp;&nbsp;");
+        //$( "#textInput" ).insertAtCaret('&nbsp;&nbsp;');
+  //      alert(cPos);
      }
 
 
