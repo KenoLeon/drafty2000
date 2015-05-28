@@ -235,17 +235,11 @@ function writeFile(){
      // Tab key
 
      if(keyCode === 9) {
-        // We want the tab key to behave like one in a text editor.
-        //textInput.innerHTML += '&nbsp;&nbsp;';
         e.preventDefault();
-        //return;
-        $( "#textInput" ).prepend("&nbsp;&nbsp;");
-        //$( "#textInput" ).insertAtCaret('&nbsp;&nbsp;');
-  //      alert(cPos);
+        cPos= $( "#textInput" ).caret();
+        $( "#textInput" ).insertAtCaret('\u00A0\u00A0');
+        $( "#textInput" ).caret(cPos);
      }
-
-
-
 }
 
 
