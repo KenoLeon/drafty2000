@@ -57,14 +57,14 @@ var drafty2000 = (function () {
 
     currentWindow.menu = menu;
     textInput = document.getElementById('textInput');
-    textInput.onkeydown = inputKeyDown;
+    //textInput.onkeydown = inputKeyDown;
     // Extra Menus
 
 
-    textInput.innerHTML = 'Just Type';
+    //textInput.innerHTML = 'Just Type';
       // Listen for keyboard shortcuts
     document.onkeydown = keyBoardShortcuts;
-    placeCaretAtEnd(textInput);
+    //placeCaretAtEnd(textInput);
 
   };
 
@@ -192,6 +192,7 @@ function writeFile(){
     html = html.replace(/<p>/gi, "");
     html = html.replace(/<\/p>/gi, "\n");
     html = html.replace(/&nbsp;/gi, " ");
+    //html = html.replace(/\u00A0/gi, "  ");
     html = html.replace(/&#xfeff;/gi, " ");
     html = html.replace(/<span>/gi, "");
     html = html.replace(/<\/span>/gi, "");
@@ -235,10 +236,10 @@ function writeFile(){
      // Tab key
 
      if(keyCode === 9) {
-        e.preventDefault();
-        cPos= $( "#textInput" ).caret();
-        $( "#textInput" ).insertAtCaret('\u00A0\u00A0');
-        $( "#textInput" ).caret(cPos);
+        //e.preventDefault();
+        //cPos= $( "#textInput" ).caret();
+        //$( "#textInput" ).insertAtCaret('\u00A0\u00A0');
+        //$( "#textInput" ).caret(cPos);
      }
 }
 
@@ -277,6 +278,7 @@ function writeFile(){
       $.get( "./Templates/titlePage.html", function( data ) {
         //alert(data);
         $( "#textInput" ).prepend( data );
+        placeCaretAtEnd(textInput);
         // $( ".result" ).html( data );
         // alert( "Load was performed." );
       });

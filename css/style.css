@@ -4,6 +4,9 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, b, section {
   font: inherit;
 }
 
+b {
+  font-weight:bolder !important;
+}
 
 ::selection {background: #ededed;}
 ::-moz-selection {background: #ededed;}
@@ -56,7 +59,9 @@ body {
     cursor: pointer;
   }
 
-
+#textInput{
+  text-align: center !important;
+}
 
 #textInput:focus {
   border: none;
@@ -72,3 +77,10 @@ body {
 input[type="file"] {
   display: none !important;
   }
+
+  /*Title PAge Template*/
+
+  #titleP{
+    text-align: center;
+    margin: 0 auto;
+}
