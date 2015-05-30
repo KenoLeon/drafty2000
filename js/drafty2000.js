@@ -179,23 +179,23 @@ function writeFile(){
 
   function textToHTML (text) {
 
-    text = '<p>' + text;
-    text = text.replace(/[\n]/gi, "</p><p>");
-    if (text.slice(-3) === '<p>') {
-      text = text.slice(0, -3);
-    }
+    //text = '<p>' + text;
+    //text = text.replace(/[\n]/gi, "</p><p>");
+    //if (text.slice(-3) === '<p>') {
+    //  text = text.slice(0, -3);
+    //}
     return text;
   }
 
 
   function htmlToText(html){
-    html = html.replace(/<p>/gi, "");
-    html = html.replace(/<\/p>/gi, "\n");
-    html = html.replace(/&nbsp;/gi, " ");
+    //html = html.replace(/<p>/gi, "");
+    //html = html.replace(/<\/p>/gi, "\n");
+    //html = html.replace(/&nbsp;/gi, " ");
     //html = html.replace(/\u00A0/gi, "  ");
-    html = html.replace(/&#xfeff;/gi, " ");
-    html = html.replace(/<span>/gi, "");
-    html = html.replace(/<\/span>/gi, "");
+    //html = html.replace(/&#xfeff;/gi, " ");
+    //html = html.replace(/<span>/gi, "");
+    //html = html.replace(/<\/span>/gi, "");
     return html;
   }
 
