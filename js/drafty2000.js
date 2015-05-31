@@ -276,14 +276,20 @@ function writeFile(){
     // Main UI
     $('#titlePage').click(function(e) {
       $.get( "./Templates/titlePage.html", function( data ) {
-        //alert(data);
         $( "#textInput" ).prepend( data );
         placeCaretAtEnd(textInput);
-        // $( ".result" ).html( data );
-        // alert( "Load was performed." );
       });
-
     });
+
+    $('#fadeIn').click(function(e) {
+      //
+      $.get( "./Templates/elements.html", function( data ) {
+        $( "#textInput" ).prepend( data );
+        placeCaretAtEnd(textInput);
+      });
+  });
+
+
 
   });
 
