@@ -236,6 +236,9 @@ function writeFile(){
      // Tab key
 
      if(keyCode === 9) {
+
+        //To do:
+        //Tab changes center left ?
         //e.preventDefault();
         //cPos= $( "#textInput" ).caret();
         //$( "#textInput" ).insertAtCaret('\u00A0\u00A0');
@@ -274,21 +277,24 @@ function writeFile(){
 
   $(document).ready(function() {
     // Main UI
+    //TITLE PAGE
     $('#titlePage').click(function(e) {
       $.get( "./Templates/titlePage.html", function( data ) {
         $( "#textInput" ).prepend( data );
         placeCaretAtEnd(textInput);
       });
     });
-
+    //FADE IN
     $('#fadeIn').click(function(e) {
-      //
       $.get( "./Templates/elements.html", function( data ) {
-        $( "#textInput" ).prepend( data );
+        if ( $('#titlePageT').length ) {
+          $('#titlePageT' ).append( data );
+        } else {
+          $( "#textInput" ).prepend( data );
+        }
         placeCaretAtEnd(textInput);
       });
-  });
-
+    });
 
 
   });
