@@ -288,12 +288,23 @@ function writeFile(){
     $('#fadeIn').click(function(e) {
       $.get( "./Templates/elements.html", function( data ) {
         if ( $('#titlePageT').length ) {
+          // To do filter for fadein
           $('#titlePageT' ).append( data );
         } else {
           $( "#textInput" ).prepend( data );
         }
         placeCaretAtEnd(textInput);
       });
+    });
+
+    $('#intB').click(function(e) {
+
+    alert('Will Add INT.');
+    });
+
+    $('#extB').click(function(e) {
+
+    alert('Will Add EXT.');
     });
 
 
