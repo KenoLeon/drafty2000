@@ -290,31 +290,30 @@ function writeFile(){
     $('#fadeIn').click(function(e) {
       $.get( "./Templates/elements.html", function( data ) {
 
-        var $jQueryObject = $($.parseHTML(data));
 
-        var html = $jQueryObject.find("#int").html();
-        //var html = $.parseHTML( data );
-        console.log(html);
-        //var insert = data.$('#fadeIn').html();
-        //console.log(html.find('#fadeIn'));
+        var tempDom = $('<output>').append($.parseHTML( data ));
+        var insert = $('#fadeIn', tempDom);
+
         if ( $('#titlePageT').length ) {
           // To do filter for fadein
-          $('#titlePageT' ).append( data );
+          $('#titlePageT' ).append( insert[0] );
+          $('#titlePageT' ).append( '<br/><br/>');
+
         } else {
-          $( "#textInput" ).prepend( data );
+          $( "#textInput" ).prepend( insert[0] );
+          $( "#textInput" ).prepend( '<br/><br/>' );
+
         }
         placeCaretAtEnd(textInput);
       });
     });
 
     $('#intB').click(function(e) {
-
     alert('Will Add INT.');
     });
 
 
     $('#extB').click(function(e) {
-
     alert('Will Add EXT.');
     });
 
