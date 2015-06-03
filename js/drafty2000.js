@@ -284,9 +284,19 @@ function writeFile(){
         placeCaretAtEnd(textInput);
       });
     });
+
+
     //FADE IN
     $('#fadeIn').click(function(e) {
       $.get( "./Templates/elements.html", function( data ) {
+
+        var $jQueryObject = $($.parseHTML(data));
+
+        var html = $jQueryObject.find("#int").html();
+        //var html = $.parseHTML( data );
+        console.log(html);
+        //var insert = data.$('#fadeIn').html();
+        //console.log(html.find('#fadeIn'));
         if ( $('#titlePageT').length ) {
           // To do filter for fadein
           $('#titlePageT' ).append( data );
@@ -301,6 +311,7 @@ function writeFile(){
 
     alert('Will Add INT.');
     });
+
 
     $('#extB').click(function(e) {
 
