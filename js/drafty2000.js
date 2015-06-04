@@ -289,13 +289,10 @@ function writeFile(){
     //FADE IN
     $('#fadeIn').click(function(e) {
       $.get( "./Templates/elements.html", function( data ) {
-
-
         var tempDom = $('<output>').append($.parseHTML( data ));
         var insert = $('#fadeIn', tempDom);
 
         if ( $('#titlePageT').length ) {
-          // To do filter for fadein
           $('#titlePageT' ).append( insert[0] );
           $('#titlePageT' ).append( '<br/><br/>');
 
@@ -309,12 +306,22 @@ function writeFile(){
     });
 
     $('#intB').click(function(e) {
-    alert('Will Add INT.');
+      $.get( "./Templates/elements.html", function( data ) {
+        var tempDom = $('<output>').append($.parseHTML( data ));
+        var insert = $('#int', tempDom);
+        $( "#textInput" ).append( insert[0] );
+        $( "#textInput" ).append( '<br/><br/>' );
+      });
     });
 
 
     $('#extB').click(function(e) {
-    alert('Will Add EXT.');
+      $.get( "./Templates/elements.html", function( data ) {
+        var tempDom = $('<output>').append($.parseHTML( data ));
+        var insert = $('#ext', tempDom);
+        $( "#textInput" ).append( insert[0] );
+        $( "#textInput" ).append( '<br/><br/>' );
+      });
     });
 
 
