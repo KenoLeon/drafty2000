@@ -309,6 +309,7 @@ function writeFile(){
       $.get( "./Templates/elements.html", function( data ) {
         var tempDom = $('<output>').append($.parseHTML( data ));
         var insert = $('#int', tempDom);
+        $( "#textInput" ).append( '<br/>' );
         $( "#textInput" ).append( insert[0] );
         $( "#textInput" ).append( '<br/><br/>' );
       });
@@ -319,10 +320,23 @@ function writeFile(){
       $.get( "./Templates/elements.html", function( data ) {
         var tempDom = $('<output>').append($.parseHTML( data ));
         var insert = $('#ext', tempDom);
+        $( "#textInput" ).append( '<br/>' );
         $( "#textInput" ).append( insert[0] );
         $( "#textInput" ).append( '<br/><br/>' );
       });
     });
+
+
+    $('#slugB').click(function(e) {
+      $.get( "./Templates/elements.html", function( data ) {
+        var tempDom = $('<output>').append($.parseHTML( data ));
+        var insert = $('#slug', tempDom);
+        $( "#textInput" ).append( insert[0] );
+        $( "#textInput" ).append( '<br/>' );
+      });
+    });
+
+
 
 
   });
