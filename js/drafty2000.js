@@ -337,7 +337,21 @@ function writeFile(){
     });
 
 
+    $('#sceneB').click(function(e) {
+      $.get( "./Templates/elements.html", function( data ) {
+        var tempDom = $('<output>').append($.parseHTML( data ));
+        var insert = $('#scene', tempDom);
+        $( "#textInput" ).append( '<br/>' );
+        $( "#textInput" ).append( insert[0] );
+        $( "#textInput" ).append( '<br/>' );
+      });
+    });
 
+
+
+    // $(document).activeElement("click", "#slug" , function() {
+    //             alert('touching a slug');
+    //         });
 
   });
 
