@@ -347,6 +347,14 @@ function writeFile(){
       });
     });
 
+    $('#characterB').click(function(e) {
+      $.get( "./Templates/elements.html", function( data ) {
+        var tempDom = $('<output>').append($.parseHTML( data ));
+        var insert = $('#character', tempDom);
+        $( "#textInput" ).append( insert[0] );
+      });
+    });
+
 
 
     // $(document).activeElement("click", "#slug" , function() {

@@ -99,3 +99,7 @@ input[type="file"] {
 #slug{
   text-transform: uppercase !important;
 }
+
+#character{
+  text-transform: uppercase !important;
+}
